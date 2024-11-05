@@ -6,11 +6,7 @@ import RickAndMortyCharacters from './components/RickAndMortyCharacters';
 
 function App() {
   return (
-    <div>
-      {/* <div>Hola, mundo</div>
-      <Character></Character>
-      <Character></Character> */}
-      {/* <Counter /> */}
+    <div className='container'>
       <RickAndMortyCharacters />
     </div>
   );
