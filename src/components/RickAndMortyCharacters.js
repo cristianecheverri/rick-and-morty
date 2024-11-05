@@ -20,20 +20,25 @@ const RickAndMortyCharacters = () => {
     }, [page]);
 
     return (
-        <>
+        <div>
+            <div className="m-5 text-center">
+                <h1 className="fs-1">Rick and Morty</h1>
+            </div>
             <div className="row row-cols-1 row-cols-md-2 g-2">
-                {isLoading ? <img src={image} alt="loading" /> : ''}
+                {isLoading ? <div className="d-flex justify-content-center text-center"><img id="img-loading" src={image} alt="loading" /></div> : ''}
                 {!isLoading && characters.map(character => (
-                    <Character 
-                        key={character.id} 
-                        name={character.name} 
+                    <Character
+                        key={character.id}
+                        name={character.name}
                         image={character.image}
                         status={character.status}
-                        species={character.species} />
+                        species={character.species}
+                        location={character.location.name}
+                        gender={character.gender} />
                 ))}
             </div>
-            <Paginator page={page} info={info} setPage={setPage}/>
-        </>
+            <Paginator page={page} info={info} setPage={setPage} />
+        </div>
     )
 }
 

@@ -1,4 +1,12 @@
-const Character = ({ name, image, status, species }) => {
+const Character = ({ name, image, status, species, location, gender }) => {
+    let badgeColor = '';
+    if (status === 'Alive') {
+        badgeColor = 'bg-green';
+    } else if (status === 'Dead') {
+        badgeColor = 'bg-red';
+    } else {
+        badgeColor = 'bg-gray';
+    }
     return (
         <div className="col">
             <div className="card mb-3">
@@ -8,9 +16,21 @@ const Character = ({ name, image, status, species }) => {
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
+
                             <h5 className="card-title">{name}</h5>
-                            <p>{status} - {species}</p>
-                            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+                            <h6><span className={`status-dot ${badgeColor}`}></span> {status} - {species}</h6>
+                            <p>
+                                Last known location:
+                                <br></br>
+                                <strong>{location}</strong>
+
+                            </p>
+
+                            <p>
+                                Gender:
+                                <br></br>
+                                <strong>{gender}</strong>
+                            </p>
                         </div>
                     </div>
                 </div>

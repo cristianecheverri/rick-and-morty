@@ -34,3 +34,24 @@
     transform: rotate(360deg);
   }
 }
+
+.status-dot {
+  width: 10px; /* Tamaño del punto */
+  height: 10px;
+  border-radius: 50%; /* Forma circular */
+  display: inline-block;
+}
+.bg-green {
+  background-color: #28a745; /* Verde */
+}
+.bg-red {
+  background-color: #dc3545; /* Rojo */
+}
+.bg-gray {
+  background-color: gray;
+}
+
+#img-loading {
+  width: 200px;
+}
+
