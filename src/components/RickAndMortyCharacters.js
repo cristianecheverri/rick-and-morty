@@ -20,7 +20,7 @@ const RickAndMortyCharacters = () => {
     }, [page]);
 
     return (
-        <div>
+        <div className="container">
             <div className="m-5 text-center">
                 <h1 className="fs-1">Rick and Morty</h1>
             </div>
@@ -29,6 +29,7 @@ const RickAndMortyCharacters = () => {
                 {!isLoading && characters.map(character => (
                     <Character
                         key={character.id}
+                        id={character.id}
                         name={character.name}
                         image={character.image}
                         status={character.status}

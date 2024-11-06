@@ -1,4 +1,6 @@
-const Character = ({ name, image, status, species, location, gender }) => {
+import { Link } from "react-router-dom";
+
+const Character = ({ id, name, image, status, species, location, gender }) => {
     let badgeColor = '';
     if (status === 'Alive') {
         badgeColor = 'bg-green';
@@ -17,7 +19,9 @@ const Character = ({ name, image, status, species, location, gender }) => {
                     <div className="col-md-8">
                         <div className="card-body">
 
-                            <h5 className="card-title">{name}</h5>
+                            <h5 className="card-title">
+                                <Link to={`characters/${id}`}>{name}</Link>
+                            </h5>
                             <h6><span className={`status-dot ${badgeColor}`}></span> {status} - {species}</h6>
                             <p>
                                 Last known location:
