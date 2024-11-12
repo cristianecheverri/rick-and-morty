@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
+import Character from "./Character";
 
 
 const CharacterDetails = () => {
@@ -19,8 +20,17 @@ const CharacterDetails = () => {
 
     return (
         <>
-            {isLoading ? <Loading/> : ''}
-            {!isLoading && <p>Estos son los detalles del personaje: {character.name}</p>}
+            {isLoading ? <Loading /> : ''}
+            {!isLoading && <Character
+                key={character.id}
+                id={character.id}
+                name={character.name}
+                image={character.image}
+                status={character.status}
+                species={character.species}
+                location={character.location.name}
+                gender={character.gender} />
+            }
         </>
     );
 }
